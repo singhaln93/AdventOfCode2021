@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/neeraj/Desktop/Workspace/AdventOfCode2021/Day0/build/src",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/src.dir/main.cpp.o -c /home/neeraj/Desktop/Workspace/AdventOfCode2021/Day0/src/main.cpp",
+  "file": "/home/neeraj/Desktop/Workspace/AdventOfCode2021/Day0/src/main.cpp"
+},
+{
+  "directory": "/home/neeraj/Desktop/Workspace/AdventOfCode2021/Day0/build/lib",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/lib.dir/lib.cpp.o -c /home/neeraj/Desktop/Workspace/AdventOfCode2021/Day0/lib/lib.cpp",
+  "file": "/home/neeraj/Desktop/Workspace/AdventOfCode2021/Day0/lib/lib.cpp"
+}
+]
