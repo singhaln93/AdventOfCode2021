@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/lib.dir/lib.cpp.o -o lib 
