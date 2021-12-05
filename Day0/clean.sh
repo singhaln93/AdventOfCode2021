@@ -3,3 +3,4 @@
 
 #!/bin/bash
 make clean -C build/
+rm -rf build

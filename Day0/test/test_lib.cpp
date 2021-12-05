@@ -8,7 +8,7 @@
 #include "Orig_Catch.hpp"
 
 void sayHelloTest() {
-  SCENARIO("Verify no argument returns Hello World", "[test_Hello.cpp]") {
+  TEST_CASE("Verify no argument returns Hello World", "[test_lib.cpp]") {
     REQUIRE(sayHello() == "Hello World");
   }
 }

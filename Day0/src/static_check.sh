@@ -50,8 +50,8 @@ fi
 echo -e '\033[0;33m' "\n3> gcc compilation" '\033[0m'
 #clang++ -std=c++17 -Wall test.cpp
 #g++ -std=c++17 -Wall main.cpp baseConversion.cpp
-make
-echo -e "\nFile Exexuted!"
+#make
+#echo -e "\nFile Exexuted!"
 
 #clear
 #Run the executable file

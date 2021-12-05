@@ -4,19 +4,14 @@
  * @date 2021-12-04
  */
 
-#include "../lib/lib.h"
-#include <iostream>
-#include <vector>
+#include "../lib/lib.hpp"
 
 int main() {
   sayHello();
-  // std::vector<std::string> vecOfStr;
-
-  // // Get the contents of file in a vector
-  // bool result = getFileContent("input.txt", vecOfStr);
-  // if (result) {
-  //   for (std::string &line : vecOfStr)
-  //     std::cout << line << std::endl; /// Print the vector contents
-  // }
+  std::vector<int> vector;
+  std::string fileName{"../input.txt"};
+  // Get the contents of file in a vector
+  bool result = getFileContentsInVector<int>(vector, fileName);
+  printVector<int>(vector);
   return 0;
 }

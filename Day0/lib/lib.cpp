@@ -4,26 +4,34 @@
  * @date 2021-12-04
  */
 
-#include "lib.h"
+#include "lib.hpp"
 
 void sayHello() { std::cout << "Hello from the outside!" << std::endl; }
 
-bool getFileContent(std::string fileName, std::vector<std::string> &vecOfStrs) {
-  // Open the File
-  std::ifstream in(fileName.c_str());
-  // Check if object is valid
-  if (!in) {
-    std::cerr << "Cannot open the File : " << fileName << std::endl;
+template <typename T>
+bool getFileContentsInVector(std::vector<T> &vector,
+                             const std::string &fileName) {
+  std::string line;
+  std::ifstream inFile;
+  inFile.open(fileName);
+  if (!inFile) {
+    std::cout << "Cannot open the File : " << fileName << std::endl;
     return false;
   }
-  std::string str;
-  // Read the next line from File untill it reaches the end.
-  while (std::getline(in, str)) {
-    // Line contains string of length > 0 then save it in vector
-    if (str.size() > 0)
-      vecOfStrs.push_back(str);
+  while (inFile >> line) {
+    std::stringstream ss(line);
+    for (int i; ss >> i;) {
+      vector.emplace_back(i);
+      if (ss.peek() == ',') ss.ignore();
+    }
   }
   // Close The File
-  in.close();
+  inFile.close();
   return true;
+}
+
+template <typename T>
+void printVector(const std::vector<T> &v) {
+  for (auto &i : v) std::cout << i << " ";
+  std::cout << std::endl;
 }
