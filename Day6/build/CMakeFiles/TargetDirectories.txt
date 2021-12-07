@@ -1,0 +1,3 @@
+/home/neeraj/Desktop/Workspace/AdventOfCode2021/Day6/build/CMakeFiles/rebuild_cache.dir
+/home/neeraj/Desktop/Workspace/AdventOfCode2021/Day6/build/CMakeFiles/edit_cache.dir
+/home/neeraj/Desktop/Workspace/AdventOfCode2021/Day6/build/CMakeFiles/AoC.dir
