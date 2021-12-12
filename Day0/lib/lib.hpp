@@ -8,6 +8,7 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
+#include <random>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -24,8 +25,8 @@ void sayHello();
  * @return true, if successful otherwise false
  */
 template <typename T>
-bool getFileContentsInVector(std::vector<T> &vector,
-                             const std::string &fileName);
+[[nodiscard]] bool getFileContentsInVector(std::vector<T> &vector,
+                                           const std::string &fileName = "");
 
 /**
  * @brief displays contents of <type> vector
@@ -33,3 +34,11 @@ bool getFileContentsInVector(std::vector<T> &vector,
  */
 template <typename T>
 void printVector(const std::vector<T> &vector);
+
+/**
+ * @brief
+ * @param min
+ * @param max
+ * @return int
+ */
+int randomNumberGenerator(const int &, const int &);

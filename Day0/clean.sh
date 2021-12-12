@@ -4,3 +4,5 @@
 #!/bin/bash
 make clean -C build/
 rm -rf build
+make clean -C build.ninja/
+rm -rf build.ninja

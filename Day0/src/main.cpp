@@ -8,10 +8,14 @@
 
 int main() {
   sayHello();
-  std::vector<int> vector;
-  std::string fileName{"../input.txt"};
+  std::vector<int> vector{1, 2, 3, 4};
+  std::string fileName{"../inputs/input.txt"};
   // Get the contents of file in a vector
-  bool result = getFileContentsInVector<int>(vector, fileName);
-  printVector<int>(vector);
+  // bool result = getFileContentsInVector(vector, fileName);
+  // std::cout << "Result" << result;
+  // printVector<int>(vector);
+
+  int randomNumber = randomNumberGenerator(1, 10);
+  std::cout << randomNumber << std::endl;
   return 0;
 }

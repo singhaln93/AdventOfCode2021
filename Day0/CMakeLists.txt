@@ -4,25 +4,27 @@
 cmake_minimum_required(VERSION 3.21)
 project(AoC)
 
+# Set cmake Cxx standard to 11/14/17/20
 set(CMAKE_CXX_STANDARD 20)
 
-#include(CTest)
-#enable_testing()
-
-#add_test(test_all test_lib)
-
-# Create a sources variable with a link to all cpp files to compile
-set(SOURCES
+# Generate the static library from the library sources
+add_library(library STATIC 
     lib/lib.cpp
-    src/main.cpp
 )
 
-# Add an executable with the above sources
-add_executable(${PROJECT_NAME} ${SOURCES})
-
-# Set the directories that should be included in the build command for this target
-# when running g++ these will be included as -I/directory/path/
-target_include_directories(${PROJECT_NAME}
-    PRIVATE 
+target_include_directories(library
+    PUBLIC 
         ${PROJECT_SOURCE_DIR}/lib
+)
+
+
+# Add an executable with the above sources
+add_executable(${PROJECT_NAME}  
+src/main.cpp
+)
+
+# link the new hello_library target with the hello_binary target
+target_link_libraries( ${PROJECT_NAME} 
+    PRIVATE 
+        library
 )
