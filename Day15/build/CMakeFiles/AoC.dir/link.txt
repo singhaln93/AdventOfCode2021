@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/AoC.dir/src/main.cpp.o -o AoC  liblibrary.a 
