@@ -5,11 +5,14 @@ cmake_minimum_required(VERSION 3.21)
 project(AoC)
 
 # Set cmake Cxx standard to 11/14/17/20
-set(CMAKE_CXX_STANDARD 20)
+#set(CMAKE_CXX_STANDARD 20)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#set(CMAKE_CXX_KNOWN_FEATURES "-std=c++2a -O3 -pthread -lboost_system")
 
 # Generate the static library from the library sources
 add_library(library STATIC 
     lib/lib.cpp
+    lib/libchrono.cpp
 )
 
 target_include_directories(library
@@ -28,3 +31,5 @@ target_link_libraries( ${PROJECT_NAME}
     PRIVATE 
         library
 )
+
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
