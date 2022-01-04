@@ -2,18 +2,15 @@
 
 ### Folder structure
     .
-    ├── clean.sh
-    ├── CMakeLists.txt      # Main CMakeLists.txt
-    ├── docs                # docs-html generated files from doxygen linked with gh pages
-    ├── exec_ninja.sh
-    ├── exec.sh
-    ├── inputs
-    ├── lib
-    ├── scripts             # scripts for automation
-    ├── src                 # source files directory
-    ├── test                # unit test directory
-    └── uml                 # Plant Uml
-    
+    ├── CMakeLists.txt          # main CMakeLists.txt
+    ├── docs                    # docs-html generated files from doxygen and gcov
+    ├── inputs                  # input data
+    ├── lib                     # library/utilities
+    ├── scripts                 # scripts for automation
+    ├── src                     # source files directory
+    ├── test                    # unit test directory
+    └── uml                     # plant UML
+             
 Use short lowercase names at least for the top-level files and folders except `LICENSE`, `README.md`
 
 ##### Tree view
