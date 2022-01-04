@@ -1,2 +1,0 @@
-/usr/bin/llvm-ar qc liblibrary.a CMakeFiles/library.dir/lib/lib.cpp.o
-/usr/bin/llvm-ranlib liblibrary.a

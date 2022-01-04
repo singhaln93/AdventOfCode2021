@@ -1,66 +1,57 @@
 /**
  * @file main.cpp
- * @author Neeraj Singhal
- * @date 2021-12-04
+ * Copyright © 2021  Neeraj Singhal
+ * All rights reserved
  */
 
 #include "../lib/lib.hpp"
-#include <iostream>
-#include <vector>
-#define TEST 0
+#define TEST 1
+#define PART 2
 
 int main()
 {
-  sayHello();
-#if 0
-  int readNumbers;
-  std::vector<int> vector;
-  std::vector<int> sumWindow;
-  std::ifstream inFile;
+// Selecting the test data or actual data using TEST macro
 #if TEST == 1
-  std::string filename{"../inputs/testData.txt"};
+  std::string fileName{"../inputs/testData.txt"};
 #else
-  std::string filename{"../inputs/actualData.txt"};
+  std::string fileName{"../inputs/actualData.txt"};
 #endif
 
-  inFile.open(filename);
-  if (!inFile)
-  {
-    std::cout << "Unable to open file";
-    exit(1); // terminate with error
-  }
-
-  while (inFile >> readNumbers)
-  {
-    vector.push_back(readNumbers);
-  }
-  inFile.close();
-
+  std::vector<int> vector;
+  [[maybe_unused]] auto res = getFileContentsInVector<int>(vector, fileName);
+  std::cout << "Input SonarData: ";
+  printVector<int>(vector);
+#if PART == 1
   auto count = 0;
-  auto countWindow = 0;
-  std::cout << "Input SonarData:";
-  for (auto i = 0; i < vector.size(); i++)
+  auto size = static_cast<int>(vector.size());
+  for (auto i = 0; i < size; i++)
   {
-    std::cout << vector[i] << " ";
     if (vector[i] < vector[i + 1])
-    {
       count++;
-    }
+  }
+  std::cout << "count:" << count << std::endl;
+#endif
 
+#if PART == 2
+  auto countWindow = 0;
+  std::vector<int> sumWindow;
+
+  auto size = static_cast<int>(vector.size());
+  for (auto i = 0; i < size; i++)
+  {
     sumWindow.push_back(vector[i] + vector[i + 1] + vector[i + 2]);
   }
-  std::cout << "\tcount:" << count << std::endl;
-  std::cout << "SonarData Window:";
-  for (auto i = 0; i < sumWindow.size() - 1; i++)
+
+  std::cout << "SonarData Window: ";
+  printVector<int>(sumWindow);
+  auto sizeWindow = static_cast<int>(sumWindow.size());
+  for (auto i = 0; i < sizeWindow - 1; i++)
   {
-    std::cout << sumWindow[i] << " ";
     if (sumWindow[i] < sumWindow[i + 1])
-    {
       countWindow++;
-    }
   }
 
-  std::cout << "\tcountWin:" << countWindow << std::endl;
+  std::cout << "countWin:" << countWindow << std::endl;
 #endif
   return 0;
 }

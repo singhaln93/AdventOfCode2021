@@ -25,16 +25,42 @@ void sayHello();
  * @return true, if successful otherwise false
  */
 template <typename T>
-[[nodiscard("Don't ignore the return value")]] bool
-getFileContentsInVector(std::vector<T> &vector,
-                        const std::string &fileName = "");
-
+[[nodiscard("Don't ignore the return value")]] bool getFileContentsInVector(std::vector<T> &vector,
+                                                                            const std::string &fileName)
+{
+    std::string line;
+    std::ifstream inFile;
+    inFile.open(fileName);
+    if (!inFile)
+    {
+        std::cout << "Cannot open the File : " << fileName << std::endl;
+        return false;
+    }
+    while (inFile >> line)
+    {
+        std::stringstream ss(line);
+        for (int i; ss >> i;)
+        {
+            vector.push_back(i);
+            if (ss.peek() == ',')
+                ss.ignore();
+        }
+    }
+    // Close The File
+    inFile.close();
+    return true;
+}
 /**
  * @brief displays contents of <type> vector
  * @param[in] vector input <type>vector
  */
 template <typename T>
-void printVector(const std::vector<T> &vector);
+void printVector(const std::vector<T> &v)
+{
+    for (auto &i : v)
+        std::cout << i << " ";
+    std::cout << std::endl;
+}
 
 /**
  * @brief generate random number
