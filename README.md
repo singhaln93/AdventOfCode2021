@@ -19,7 +19,7 @@ tree -L 2
 ```
 <!-- DOCUMENTATION -->
 ### Documentation
-[Doxygen Documentation](Day0/docs/DOXYGEN.md) can be viewed here.
+[Doxygen Documentation](Day00/docs/DOXYGEN.md) can be viewed here.
 
 <!-- LICENSE -->
 ### License
