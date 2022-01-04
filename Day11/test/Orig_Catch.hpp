@@ -1,8 +1,9 @@
 /**
  * @file Orig_Catch.hpp
- * @author Neeraj Singhal
- * @date 2021-12-04
+ * Copyright © 2021  Neeraj Singhal
+ * All rights reserved
  */
+
 #pragma once
 
 #define CATCH_CONFIG_MAIN

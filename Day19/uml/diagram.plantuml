@@ -1,0 +1,24 @@
+@startuml diagramName
+
+'Refernce: https://plantuml.com/class-diagram'
+class Parent
+{
+    .. Member variable ..
+    - parentName:string
+    - parentNumber:int
+    .. Method/Functions ..
+    - getParentName()
+    + getParentNumber() 
+}
+class Child
+{
+    .. Member variable ..
+    - childName:string
+    - childNumber:int
+    .. Method/Functions ..
+    - getChildName()
+    + getChildNumber() 
+}
+
+Parent <|-- Child
+@enduml
